@@ -102,8 +102,8 @@ sudo apt install -y clang llvm libbpf-dev linux-headers-$(uname -r) \
                      make pkg-config jq
 
 # Clone repository
-git clone https://github.com/Maiku38/os-lens
-cd OS-LENS
+git clone https://github.com/Maku38/os-lens
+cd os-lens
 
 # Build
 make
@@ -113,14 +113,14 @@ curl -fsSL https://ollama.com/install.sh | sh
 ollama pull llama3.1:8b
 
 # Run (requires sudo for eBPF)
-sudo ./os-lens
+sudo ./main
 ```
 
 ### Testing
 
 In one terminal:
 ```bash
-sudo ./os-lens
+sudo ./main
 ```
 
 In another terminal, trigger some failures:
@@ -367,10 +367,10 @@ Built by **Mayank Joshi** (@maiku344-twitter)
 - 🔧 First eBPF project
 - 💼 Looking for opportunities in infrastructure/observability
 
-**Found a bug?** [Open an issue](https://github.com/Maiku38/OS-LENS/issues)
+**Found a bug?** [Open an issue](https://github.com/Maku38/OS-LENS/issues)
 
 **Want to chat?** 
-- Twitter: [@maiku344-handle]
+- Twitter: @maiku344
 - Email: mayankj2827@gmail.com
 - LinkedIn: https://www.linkedin.com/in/mayank-joshi-542a79287/
 
@@ -390,15 +390,15 @@ Built by **Mayank Joshi** (@maiku344-twitter)
 
 If you find this useful, consider starring the repo!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Maiku38/OS-LENS&type=Date)](https://star-history.com/#Maiku38/OS-LENS&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Maku38/OS-LENS&type=Date)](https://star-history.com/#Maku38/OS-LENS&Date)
 
 ---
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/Maiku38/OS-LENS?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Maiku38/OS-LENS?style=social)
-![GitHub issues](https://img.shields.io/github/issues/Maiku38/OS-LENS)
+![GitHub stars](https://img.shields.io/github/stars/Maku38/os-lensstyle=social)
+![GitHub forks](https://img.shields.io/github/forks/Maku38/os-lensstyle=social)
+![GitHub issues](https://img.shields.io/github/issues/Maku38/os-lens)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ---
