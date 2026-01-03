@@ -1,8 +1,8 @@
-# KernelOS 🔍
+# OS-LENS 🔍
 
 > AI-powered TCP debugging using eBPF
 
-Stop spending hours debugging connection failures. KernelOS watches your Linux kernel in real-time and explains failures in plain English.
+Stop spending hours debugging connection failures. OS-LENS watches your Linux kernel in real-time and explains failures in plain English.
 
 ![Demo](assets/demo.gif)
 
@@ -29,7 +29,7 @@ Traditional monitoring tells you:
 
 ## ✨ The Solution
 
-KernelOS catches failures **at the kernel level** and explains them **instantly**:
+ catches failures **at the kernel level** and explains them **instanKernelOStly**:
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🚨 TCP CONNECTION FAILURE DETECTED
@@ -64,7 +64,7 @@ How to Fix:
 
 Similar Incidents:
 - 15 other teams hit this exact issue
-- Average fix time: 5 minutes (with KernelOS)
+- Average fix time: 5 minutes (with os-lens)
 - Average fix time: 3.5 hours (without)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -102,7 +102,7 @@ sudo apt install -y clang llvm libbpf-dev linux-headers-$(uname -r) \
                      make pkg-config jq
 
 # Clone repository
-git clone https://github.com/Maiku38/kernelos
+git clone https://github.com/Maiku38/os-lens
 cd OS-LENS
 
 # Build
@@ -150,8 +150,8 @@ You should see real-time failure detection with AI explanations.
                    │ eBPF hook
                    ▼
 ┌─────────────────────────────────────────┐
-│       eBPF Program (kernelos.bpf.c)      │
-│  • Captures TCP state transitions        │
+│       eBPF Program (main.bpf.c)     │
+│  • Captures TCP state transitions       │
 │  • Detects failures (SYN_SENT → CLOSE)  │
 │  • Extracts error codes, IPs, ports     │
 │  • Stores in ring buffer                │
