@@ -1,10 +1,17 @@
 #!/bin/bash
 echo "🦈 Launching kOps-AI..."
 
-# Check if Docker is running
+# 1. Check Docker
 if ! docker info > /dev/null 2>&1; then
     echo "❌ Error: Docker is not running."
     exit 1
+fi
+
+# 2. Auto-Build (The Magic Fix)
+if [[ "$(docker images -q kops-ai 2> /dev/null)" == "" ]]; then
+    echo "🏗️  First time setup: Building Docker Image..."
+    echo "   (This takes 1-2 minutes)"
+    docker build -t kops-ai .
 fi
 
 echo "----------------------------------------"
@@ -32,11 +39,11 @@ elif [ "$mode" == "3" ]; then
       --pid=host \
       --net=host \
       -e KOPS_GEMINI_KEY="$apikey" \
-      -e KOPS_MODEL="gemini-2.5-flash" \
+      -e KOPS_MODEL="gemini-1.5-flash-latest" \
       kops-ai
 
 else
-    # Local Mode (Default)
+    # Local Mode
     docker run -it --rm --privileged \
       -v /sys/kernel/debug:/sys/kernel/debug \
       --pid=host \
