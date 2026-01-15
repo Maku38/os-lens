@@ -14,7 +14,7 @@ vmlinux:
 	$(BPFTOOL) btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h
 
 # 2. Compile BPF code to object file
-main.bpf.o: .output vmlinux
+main.bpf.o: .output 
 	$(CLANG) -g -O2 -target bpf -D__TARGET_ARCH_x86 -I. -c main.bpf.c -o .output/main.bpf.o
 
 # 3. Generate Skeleton Header (User space helper)
@@ -23,7 +23,7 @@ main.skel.h: main.bpf.o
 
 # 4. Compile User Space code
 main: main.skel.h
-	$(CLANG) -g -O2 -Wall -I. main.c -lbpf -lelf -lz -o main
+	$(CLANG) -g -O2 -Wall -I. main.c -lbpf -lelf -lz -lpthread -lcurl -ljson-c -o main
 
 clean:
 	rm -rf .output main main.skel.h vmlinux.h
