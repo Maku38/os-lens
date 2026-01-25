@@ -1,6 +1,5 @@
 main
 *.o
 *.skel.h
-vmlinux.h
 .vscode
 .DS_Store
