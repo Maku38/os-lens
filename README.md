@@ -117,7 +117,38 @@ Watch OS-Lens detect a connection failure and provide instant AI-powered diagnos
 
 ---
 
-## ✨ Features
+## 🧪 Try it Yourself
+
+Once OS-Lens is running, open a **new terminal window** and run these commands to see the AI in action.
+
+### Scenario 1: The "Service Down" (Connection Refused)
+Simulate a database that crashed or isn't running.
+```bash
+# Try to connect to a random port where nothing is listening
+nc -v 127.0.0.1 9999
+```
+### Scenario 2: The "Firewall Blackhole" (Timeout)
+
+Simulate a packet being dropped by a cloud firewall or wrong IP.
+```bash
+
+# Try to connect to a TEST-NET IP (Reserved for documentation, usually drops packets)
+# We use -w 4 to force a timeout after 4 seconds
+nc -v -w 4 192.0.2.1 80
+```
+
+### Scenario 3: The "Application Crash" (Python Script)
+
+Prove that OS-Lens debugs code, not just terminal commands.
+```bash
+
+# Run a Python one-liner that fails to connect to a fake Postgres port
+python3 -c "import socket; s=socket.socket(); s.connect(('127.0.0.1', 5432))"
+```
+
+---
+
+### ✨ Features
 
 ### 🔬 Deep Kernel Visibility
 - **eBPF-powered tracing** - Zero overhead monitoring of kernel network stack
