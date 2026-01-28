@@ -54,6 +54,7 @@ Requires **Docker** and a Linux Kernel (5.8+).
 git clone [https://github.com/Maku38/os-lens](https://github.com/Maku38/os-lens)
 cd os-lens
 ./run.sh
+```
 
 That's it. The script will:
 
