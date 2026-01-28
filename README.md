@@ -111,7 +111,7 @@ The setup script will:
 
 ## 🎬 Demo
 
-![OS-Lens Demo](assets/demo.gif)
+![OS-Lens Demo](assets/Screencast_from_2026_01_28_23_56_01_V1.mp4)
 
 Watch OS-Lens detect a connection failure and provide instant AI-powered diagnosis.
 
