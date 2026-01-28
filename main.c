@@ -167,9 +167,15 @@ void perform_ai_analysis(ai_job_t *job) {
     
     const char *err_name = get_error_name(job->event.ret);
 
-    printf("[❌ TCP FAIL] %s | %s -> %s | Target: %s:%d | Error: %d (%s) | Latency: %.2fs\n", 
-           job->event.comm, start_str, end_str, ip_str, port, job->event.ret, err_name, duration_sec);
-    
+    printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+    printf("🚨 TCP CONNECTION FAILURE DETECTED\n");
+    printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+    printf("Process:  %s (PID: %u)\n", job->event.comm, job->event.pid);
+    printf("Target:   %s:%d\n", ip_str, port);
+    printf("Time:     %s -> %s\n", start_str, end_str);
+    printf("Error:    %s (%d)\n", err_name, job->event.ret);
+    printf("Latency:  %.2fms\n", duration_sec);
+    printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
     const char *provider = "Ollama";
     if (CONF_GEMINI_KEY) provider = "Gemini";
     else if (CONF_OPENAI_KEY) provider = "OpenAI";
